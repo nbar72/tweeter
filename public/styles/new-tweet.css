@@ -4,25 +4,30 @@ form {
   padding: 0.5em;
 }
 
+form label {
+  color:rgb(114, 113, 113)
+}
+
+/* form div contains button and counter*/
 form div {
-  font-family: Bungee;
   display: flex;
   justify-content: space-between;
+  font-family: Bungee;
   font-size: 20px;
 }
 
 form button {
-  background-color: #4056A1;
-  color: #FFFFFF;
   border: none;
   padding: 5px 14px;
+  background-color: #4056A1;
+  color: #FFFFFF;
 }
 
 form textarea {
   border: none;
-  background-color: transparent;
-  border-bottom: black solid 4px;
-  margin-bottom: 16px;
   outline: none;
-  resize: none;
+  margin-bottom: 16px;
+  border-bottom: black solid 4px;
+  background-color: transparent;
+  font-size: 19px;
 }
