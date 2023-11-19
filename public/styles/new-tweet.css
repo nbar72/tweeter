@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+form div {
+  font-family: Bungee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+form button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+  padding: 5px 14px;
+}
+
+form textarea {
+  border: none;
+  background-color: transparent;
+  border-bottom: black solid 4px;
+  margin-bottom: 16px;
+  outline: none;
+  resize: none;
+}
