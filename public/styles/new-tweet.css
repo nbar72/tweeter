@@ -31,3 +31,7 @@ form textarea {
   background-color: transparent;
   font-size: 19px;
 }
+
+.red-counter {
+  color: red;
+}

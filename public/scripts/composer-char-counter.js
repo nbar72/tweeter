@@ -6,7 +6,13 @@ $(document).ready(function() {
     const string = $(this).val();
 
     // append length of string to counter: 
-    let counter = $(".counter").text(140 - string.length);
-    
+    $("#counter").text(140 - string.length);
+
+    // change to red 
+    if ((140 - string.length) < 0) {
+      $('#counter').addClass('red-counter')
+    } else {
+      $('#counter').removeClass('red-counter')
+    }
   }); 
 });
