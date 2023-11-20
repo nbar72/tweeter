@@ -28,6 +28,7 @@ form textarea {
   outline: none;
   margin-bottom: 16px;
   border-bottom: black solid 4px;
+  resize: none;
   background-color: transparent;
   font-size: 19px;
 }

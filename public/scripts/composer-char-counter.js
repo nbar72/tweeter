@@ -8,7 +8,7 @@ $(document).ready(function() {
     // append length of string to counter: 
     $("#counter").text(140 - string.length);
 
-    // change to red 
+    // change counter to red if string is too long 
     if ((140 - string.length) < 0) {
       $('#counter').addClass('red-counter')
     } else {
