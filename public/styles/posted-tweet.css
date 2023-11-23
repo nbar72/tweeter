@@ -27,7 +27,7 @@ article.tweet {
   font-weight: 600;
 }
 
-footer.tweet {
+footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
