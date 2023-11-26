@@ -4,43 +4,63 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-function createTweetElement(data) {
-  const newTweet = 
-    `<article class="tweet">
+// Fake data taken from initial-tweets.json
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  },
+]
+
+const createTweetElement = function(tweet) {
+  const $newTweet = 
+    $(`<article class="tweet">
         <header>
-          <div> <img src="${data.user.avatars}" alt="My Profile Picture"> </div>
-          <div> ${data.user.name} </div>
-          <div> ${data.user.handle} </div>
+          <div> <img src="${tweet.user.avatars}" alt="My Profile Picture"> </div>
+          <div> ${tweet.user.name} </div>
+          <div> ${tweet.user.handle} </div>
         </header>
         <div class="tweet-text">
-          ${data.content.text}
+          ${tweet.content.text}
         </div>
         <footer>
-          <div> ${data.created_at} </div>
+          <div> ${tweet.created_at} </div>
           <div class="symbols">
             <div><i class="fa-solid fa-flag"></i></div>
             <div><i class="fa-solid fa-retweet"></i></div>
             <div></i><i class="fa-solid fa-heart"></i></div>
           </div>
         </footer>
-    </article>`;
-  return newTweet;
-};
+    </article>`);
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
+  return $newTweet;
+}
+
+const renderTweets = function(tweets) {
+  for (const tweet of tweets) {
+    const newTweet = createTweetElement(tweet);
+    $('#tweets-container').append(newTweet);
+  }
 }
 
 $(document).ready( function() {
-  const $tweet = createTweetElement(tweetData);
-  console.log($tweet); // test: to see what it looks like
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  renderTweets(data);
 });
