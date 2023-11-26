@@ -9,8 +9,7 @@ const data = [
   {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
+      "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@SirIsaac"
     },
     "content": {
@@ -30,37 +29,37 @@ const data = [
   },
 ]
 
-const createTweetElement = function(tweet) {
-  const $newTweet = 
-    $(`<article class="tweet">
-        <header>
-          <div> <img src="${tweet.user.avatars}" alt="My Profile Picture"> </div>
-          <div> ${tweet.user.name} </div>
-          <div> ${tweet.user.handle} </div>
-        </header>
-        <div class="tweet-text">
-          ${tweet.content.text}
-        </div>
-        <footer>
-          <div> ${tweet.created_at} </div>
-          <div class="symbols">
-            <div><i class="fa-solid fa-flag"></i></div>
-            <div><i class="fa-solid fa-retweet"></i></div>
-            <div></i><i class="fa-solid fa-heart"></i></div>
-          </div>
-        </footer>
-    </article>`);
-
-  return $newTweet;
-}
-
-const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
-    const newTweet = createTweetElement(tweet);
-    $('#tweets-container').append(newTweet);
-  }
-}
-
 $(document).ready( function() {
+  const createTweetElement = function(tweet) {
+    const $newTweet = 
+      $(`<article class="tweet">
+          <header>
+            <div> <img src="${tweet.user.avatars}" alt="My Profile Picture"> </div>
+            <div> ${tweet.user.name} </div>
+            <div> ${tweet.user.handle} </div>
+          </header>
+          <div class="tweet-text">
+            ${tweet.content.text}
+          </div>
+          <footer>
+            <div> ${tweet.created_at} </div>
+            <div class="symbols">
+              <div><i class="fa-solid fa-flag"></i></div>
+              <div><i class="fa-solid fa-retweet"></i></div>
+              <div></i><i class="fa-solid fa-heart"></i></div>
+            </div>
+          </footer>
+      </article>`);
+
+    return $newTweet;
+  }
+
+  const renderTweets = function(tweets) {
+    for (const tweet of tweets) {
+      const newTweet = createTweetElement(tweet);
+      $('#tweets-container').append(newTweet);
+    }
+  }
+  
   renderTweets(data);
 });
