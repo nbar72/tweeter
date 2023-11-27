@@ -63,8 +63,19 @@ $(document).ready( function() {
   
   renderTweets(data);
 
-  $('.new-tweet').submit(function(event) {
+  $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
+
+    // serialize the form data (tweeter server is configured to receive data in query string format)
+    const formData = $('.new-tweet form').serialize();
+
+    // ajax request: send serialized data to server by submitting post request
+    $.ajax({
+    type: "POST",
+    url: '/tweets/',
+    data: formData
+    });
+
   })
 
 });
