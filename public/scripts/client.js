@@ -62,4 +62,10 @@ $(document).ready( function() {
   }
   
   renderTweets(data);
+
+  $('.new-tweet').submit(function(event) {
+    event.preventDefault();
+  })
+
 });
+
