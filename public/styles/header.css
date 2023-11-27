@@ -6,6 +6,11 @@
   height: 540px;
   padding-top: 120px;
   width: 100%;
+  color: white;
   background-color: rgb(234, 146, 13);
   background-image: url(https://www.transparenttextures.com/patterns/cubes.png);
+}
+
+.lastname {
+  font-weight: 300;
 }
