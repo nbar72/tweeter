@@ -49,17 +49,27 @@ $(document).ready( function() {
     })
   };
   loadTweets();
-  
+
+  // function for error messages
+  const showError = function (message) {
+    errorMessage = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`
+    $("#error").slideDown().html(errorMessage);
+  };
+
   // Use ajax POST request to send serialized data to server (server is configured to receive data in query string)
   $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
-    
+
+    // hide any previous error messages
+    $('#error').slideUp();
     const input = $('#tweet-text').val();
-    if (input.length > 140) {
-      return alert("Tweet is too long");
-    }
     if (input.length === 0 ) {
-      return alert("Tweet cannot be blank");
+      showError('Tweet cannot be left blank');
+      return;
+    }
+    if (input.length > 140) {
+      showError('Tweet is too long');
+      return;
     }
 
     const formData = $('.new-tweet form').serialize();
