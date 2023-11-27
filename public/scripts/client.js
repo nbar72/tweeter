@@ -28,26 +28,36 @@ $(document).ready( function() {
       </article>`);
 
     return $newTweet;
-  }
+  };
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
       $('#tweets-container').append(newTweet);
     }
-  }
+  };
 
+  // Use ajax GET request to retrieve data from server
+  const loadTweets = function () {
+    $.ajax({
+      type: "GET",
+      url: "/tweets/",
+      success: (tweets) => {
+        $('#tweets-container').empty(); // Clear existing content
+        renderTweets(tweets.reverse());
+      }
+    })
+  };
+  loadTweets();
+  
   // Use ajax POST request to send serialized data to server (server is configured to receive data in query string)
   $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
     
     const input = $('#tweet-text').val();
-    console.log(input.length)
-
     if (input.length > 140) {
       return alert("Tweet is too long");
     }
-
     if (input.length === 0 ) {
       return alert("Tweet cannot be blank");
     }
@@ -56,21 +66,15 @@ $(document).ready( function() {
     $.ajax({
     type: "POST",
     url: '/tweets/',
-    data: formData
+    data: formData,
+    success: () => {
+      // reset text area and counter
+      $('#tweet-text').val('');
+      $('#counter').text(140);
+
+      loadTweets();
+      }
     });
   })
-
-  // Use ajax GET request to retrieve data from server
-  const loadTweets = function () {
-    $.ajax({
-      type: "GET",
-      url: "/tweets/",
-      success: (tweets) => {
-        renderTweets(tweets);
-      }
-    })
-  };
-  loadTweets();
-
 });
 
