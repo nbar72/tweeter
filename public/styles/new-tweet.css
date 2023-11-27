@@ -23,6 +23,11 @@ form button {
   color: #FFFFFF;
 }
 
+/* Add outline when button is clicked */
+form button:active {
+  border: 3px solid rgb(234, 146, 13);; 
+}
+
 form textarea {
   border: none;
   outline: none;
