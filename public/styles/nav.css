@@ -26,6 +26,18 @@ nav span {
 /* angle down arrows */
 .fa-solid.fa-angles-down {
   color:red;
+  padding-top: 5px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* animate arrows */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @media screen and (max-width: 1023px) {
