@@ -41,11 +41,6 @@ body {
     padding-left: 50px;
   }
 
-  header .main-header {
-    flex: 0 0 45%;
-    height: 400px;
-  }
-
   main {
     flex: 0 0 55%;
     padding-left: 5vw;
