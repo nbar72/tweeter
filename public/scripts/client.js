@@ -5,9 +5,9 @@
  */
 
 
-$(document).ready( function() {
+$(document).ready(function() {
   const createTweetElement = function(tweet) {
-    const $newTweet = 
+    const $newTweet =
       $(`<article class="tweet">
           <header>
             <div> <img src="${tweet.user.avatars}" alt="My Profile Picture"> </div>
@@ -26,7 +26,6 @@ $(document).ready( function() {
             </div>
           </footer>
       </article>`);
-
     return $newTweet;
   };
 
@@ -43,16 +42,18 @@ $(document).ready( function() {
       type: "GET",
       url: "/tweets/",
       success: (tweets) => {
-        $('#tweets-container').empty(); // Clear existing content
+        // Clear existing content
+        $('#tweets-container').empty(); 
+        // make sure new tweet appears at the top of the page
         renderTweets(tweets.reverse());
       }
-    })
+    });
   };
   loadTweets();
 
   // function for error messages
   const showError = function (message) {
-    errorMessage = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`
+    const errorMessage = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`;
     $("#error").slideDown().html(errorMessage);
   };
 
@@ -62,8 +63,9 @@ $(document).ready( function() {
 
     // hide any previous error messages
     $('#error').slideUp();
+
     const input = $('#tweet-text').val();
-    if (input.length === 0 ) {
+    if (input.length === 0) {
       showError('Tweet cannot be left blank');
       return;
     }
@@ -72,19 +74,19 @@ $(document).ready( function() {
       return;
     }
 
-    const formData = $('.new-tweet form').serialize();
+    const $formData = $('.new-tweet form').serialize();
     $.ajax({
-    type: "POST",
-    url: '/tweets/',
-    data: formData,
-    success: () => {
-      // reset text area and counter
-      $('#tweet-text').val('');
-      $('#counter').text(140);
+      type: "POST",
+      url: '/tweets/',
+      data: $formData,
+      success: () => {
+        // reset text area and counter
+        $('#tweet-text').val('');
+        $('#counter').text(140);
 
-      loadTweets();
+        loadTweets();
       }
     });
-  })
+  });
 });
 
