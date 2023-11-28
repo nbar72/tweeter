@@ -28,6 +28,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Desktop view of Tweeter"](https://raw.githubusercontent.com/blueyellow7/tweeter/main/docs/Desktop-view.png)
-!["Mobile view of Tweeter"](https://raw.githubusercontent.com/blueyellow7/tweeter/main/docs/Mobile-view.png)
-!["Error message if tweet is too long"](https://raw.githubusercontent.com/blueyellow7/tweeter/main/docs/Error.png)
+!["Desktop view of Tweeter"](https://raw.githubusercontent.com/blueyellow7/tweeter/master/docs/Desktop-view.png)
+!["Mobile view of Tweeter"](https://raw.githubusercontent.com/blueyellow7/tweeter/master/docs/Mobile-view.png)
+!["Error message if tweet is too long"](https://raw.githubusercontent.com/blueyellow7/tweeter/mater/docs/Error.png)
