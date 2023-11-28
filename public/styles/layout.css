@@ -29,8 +29,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 @media screen and (min-width: 1024px) {
