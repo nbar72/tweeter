@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 400px;
   width: 100%;
   color: white;
   background-color: rgb(234, 146, 13);
@@ -17,11 +18,5 @@
   .main-header {
     height: 520px;
     padding-top: 120px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .main-header {
-    height: 400px;
   }
 }
