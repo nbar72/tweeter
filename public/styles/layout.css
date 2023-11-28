@@ -25,10 +25,30 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+ main.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
+
+@media screen and (min-width: 1024px) {
+  #header-and-tweets {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 200px;
+    padding-left: 50px
+  }
+
+  header .main-header {
+    flex: 0 0 45%;
+    height: 400px;
+  }
+
+  main {
+    flex: 0 0 55%;
+    padding-left: 2vw;
+  }
+}
+

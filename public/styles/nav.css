@@ -27,3 +27,10 @@ nav span {
 .fa-solid.fa-angles-down {
   color:red;
 }
+
+@media screen and (max-width: 1023px) {
+  nav {
+    background-color: rgb(234, 146, 13);
+    background-image: url(https://www.transparenttextures.com/patterns/cubes.png);
+  }
+}
