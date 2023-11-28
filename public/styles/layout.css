@@ -38,7 +38,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding-top: 200px;
-    padding-left: 50px
+    padding-left: 50px;
   }
 
   header .main-header {
@@ -48,7 +48,8 @@ body {
 
   main {
     flex: 0 0 55%;
-    padding-left: 2vw;
+    padding-left: 5vw;
+    padding-top: 0;
   }
 }
 
