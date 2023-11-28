@@ -32,9 +32,12 @@ body {
 }
 
 main.container {
-  flex: 0 0 60%;
+  flex: 0 0 65%;
+  width: 90%;
   padding-left: 10vw;
   padding-top: 0;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1023px) {

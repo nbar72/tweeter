@@ -29,6 +29,8 @@ article.tweet:hover {
   padding: 30px;
   margin: 5px;
   font-weight: 600;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 footer {
